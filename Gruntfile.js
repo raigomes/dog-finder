@@ -33,8 +33,13 @@ module.exports = function(grunt) {
         }
       },
       watch: {
-        files: ['/src/styles/**.less'],
-        tasks: ['less']
+        defaultStyles: {
+            files: ['src/styles/**/*.less'],
+            tasks: ['less', 'cssmin'],
+            options: {
+                nospawn: true
+            }
+        }
       },
       'gh-pages': {
         options: {
