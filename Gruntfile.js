@@ -34,7 +34,7 @@ module.exports = function(grunt) {
       },
       watch: {
         defaultStyles: {
-            files: ['src/styles/**/*.less'],
+            files: ['src/styles/**/*.less', 'src/scripts/*.js'],
             tasks: ['less', 'cssmin'],
             options: {
                 nospawn: true
@@ -45,7 +45,7 @@ module.exports = function(grunt) {
         options: {
           base: 'dist'
         },
-        src: ['src/**']
+        src: '**/*'
       }
     });
   
