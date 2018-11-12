@@ -5,12 +5,14 @@ body {
   padding: 0;
   width: 100vw;
 }
+.dog-container {
+  margin: 0 auto;
+}
 .dog-header {
   background-color: #f1f1f2;
 }
 .dog-header-container {
   padding: 2em;
-  margin-bottom: 30px;
 }
 .dog-header-content {
   text-align: center;
@@ -26,15 +28,13 @@ body {
   font-weight: 400;
   margin: 0;
 }
-.dog-container {
-  margin: 0 auto;
-}
 .dog-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin-top: 30px;
 }
 .dog-list-item {
   display: -webkit-box;
@@ -69,7 +69,23 @@ body {
   font-size: 16px;
   margin: 0 20px 10px;
 }
+.dog-image {
+  width: 100%;
+}
+.dog-information {
+  border: 1px solid #bcbdc0;
+  margin: 20px;
+}
+.dog-information-item {
+  font-size: 16px;
+  margin: 10px;
+}
+.dog-information-item--label {
+  font-weight: 800;
+}
 .dog-footer {
+  position: fixed;
+  bottom: 0;
   background-color: #000;
   color: #fff;
   width: 100%;
