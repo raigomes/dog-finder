@@ -5,7 +5,7 @@ function openJSON (json, callback) {
     request.onload = () => {
         if (request.status >= 200 && request.status < 400) {
             var data = JSON.parse(request.responseText)
-            if (calback) callback(data);
+            if (callback) callback(data);
         } else {                
             console.log('Falha na requisição http: ', request.status, request.statusText)
         }            
