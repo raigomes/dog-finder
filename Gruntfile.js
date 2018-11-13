@@ -20,6 +20,7 @@ module.exports = function(grunt) {
                 {expand: true, cwd: 'src', src: ['images/**'], dest: 'dist', filter: 'isFile'},
                 {expand: true, cwd: 'src', src: ['json/**'], dest: 'dist', filter: 'isFile'},
                 {expand: true, cwd: 'src', src: ['scripts/**'], dest: 'dist', filter: 'isFile'},
+                {expand: true, cwd: 'src', src: ['favicon.ico'], dest: 'dist', filter: 'isFile'},
                 {expand: true, cwd: 'src', src: ['index.html'], dest: 'dist', filter: 'isFile'}
             ]
         }
