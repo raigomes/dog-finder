@@ -14,13 +14,23 @@ module.exports = function(grunt) {
             }
         }
       },
+      copy: {
+        main: {
+            files: [
+                {expand: true, cwd: 'src', src: ['images/**'], dest: 'dist', filter: 'isFile'},
+                {expand: true, cwd: 'src', src: ['json/**'], dest: 'dist', filter: 'isFile'},
+                {expand: true, cwd: 'src', src: ['scripts/**'], dest: 'dist', filter: 'isFile'},
+                {expand: true, cwd: 'src', src: ['index.html'], dest: 'dist', filter: 'isFile'}
+            ]
+        }
+      },
       cssmin: {
         target: {
             files: [{
                 expand: true,
                 cwd: 'src/styles',
                 src: ['*.css', '!*.min.css'],
-                dest: 'src/styles',
+                dest: 'dist/styles',
                 ext: '.min.css'
             }]
         }
@@ -28,7 +38,7 @@ module.exports = function(grunt) {
       uglify: {
         default: {
             files: {
-                'src/scripts/main.min.js': 'src/scripts/main.js'
+                'dist/scripts/main.min.js': ['src/scripts/main.js']
             }
         }
       },
@@ -45,7 +55,7 @@ module.exports = function(grunt) {
         options: {
           base: 'dist'
         },
-        src: '**/*'
+        src: ['**']
       }
     });
   
@@ -53,9 +63,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-gh-pages');
 
     grunt.registerTask('default', ['less', 'cssmin', 'watch']);
-    grunt.registerTask('build', ['less', 'cssmin', 'uglify', 'gh-pages']);
+    grunt.registerTask('build', ['less', 'copy', 'cssmin', 'gh-pages']);
   
   };
