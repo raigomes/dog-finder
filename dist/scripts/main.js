@@ -1,3 +1,5 @@
+import item from './dog-item.js'
+
 function openJSON (json, callback) {
     let request = new XMLHttpRequest()
     request.open('GET', json, true)
@@ -28,7 +30,19 @@ function fillDogList() {
     }    
 
     openJSON('json/breeds.json', (data) => {
-        console.log(data)
+        list.innerHTML = ""
+
+        data.forEach(element => {
+            item.setAttribute('data-dog-id', element.id)
+            item.querySelector('dog-name').innerHTML = element.name
+            item.querySelector('dog-temperament').innerHTML = element.temperament
+            item.querySelector('dog-photo').setAttribute('src', `images/${element.id}.jpg`)
+                                           .setAttribute('alt', `Foto de ${element.name}`)
+
+            list.appendChild(item)
+        });
+
+        document.querySelector(".dog-container").innerHTML = list
     })
 }
 
