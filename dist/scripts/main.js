@@ -28,7 +28,7 @@ function fillDogList() {
     }    
 
     openJSON('json/breeds.json', (data) => {
-        list.childNodes = ""
+        list.innerHTML = ""
 
         data.forEach(element => {
             var item = `<div class="dog-list-item" data-dog-id="${element.id}">
@@ -37,7 +37,7 @@ function fillDogList() {
                             <div class="dog-temperament">${element.temperament}</div>
                         </div>`            
 
-            list.innerHTML = item
+            list.innerHTML += item
         });
 
         document.querySelector(".dog-container").appendChild(list)
