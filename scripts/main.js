@@ -1,4 +1,4 @@
-import item from '/scripts/dog-item.js'
+import {item} from './dog-item.js'
 
 function openJSON (json, callback) {
     let request = new XMLHttpRequest()
