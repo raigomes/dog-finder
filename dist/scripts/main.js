@@ -18,6 +18,10 @@ function openJSON (json, callback) {
     request.send()
 }
 
+function back() {
+    fillDogList();
+}
+
 function fillDogList() {
     
     openJSON('json/breeds.json', (data) => {
@@ -74,6 +78,7 @@ function showDogDescription(id) {
                             </div>`
         }
         
+        description += "<a href='javascript:back()'>Voltar</a>"
         description += '</div>'
         document.querySelector(".dog-container").innerHTML = description
         document.querySelector(".dog-header").style.display = "none"
