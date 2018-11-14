@@ -37,7 +37,7 @@ function fillDogList() {
                             <div class="dog-temperament">${element.temperament}</div>
                         </div>`            
 
-            list.appendChild(item)
+            list.innerHTML = item
         });
 
         document.querySelector(".dog-container").innerHTML = list
