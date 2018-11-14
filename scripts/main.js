@@ -28,7 +28,7 @@ function fillDogList() {
     }    
 
     openJSON('json/breeds.json', (data) => {
-        list.innerHTML = ""
+        list.childNodes = ""
 
         data.forEach(element => {
             var item = `<div class="dog-list-item" data-dog-id="${element.id}">
@@ -40,7 +40,7 @@ function fillDogList() {
             list.innerHTML = item
         });
 
-        document.querySelector(".dog-container").innerHTML = list
+        document.querySelector(".dog-container").appendChild(list)
     })
 }
 
