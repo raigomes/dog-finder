@@ -66,13 +66,12 @@ function showDogDescription(id) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-   fillDogList()
-}, false);
+    fillDogList()
 
-let items = document.querySelectorAll('.dog-list-item') 
-items.forEach(item => {
-    item.addEventListener('click', (dog) => {
-        let id = dog.getAttribute('data-dog-id')
-        showDogDescription(id)
-    })
-});
+    document.querySelectorAll('.dog-list-item').forEach(item => {
+        item.addEventListener('click', (dog) => {
+            let id = dog.getAttribute('data-dog-id')
+            showDogDescription(id)
+        })
+    });
+}, false);
