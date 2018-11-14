@@ -46,11 +46,9 @@ function fillDogList() {
     })
 }
 
-document.onreadystatechange = function () {
-    if (document.readyState == "interactive") {
-        fillDogList()
-    }
-}
+document.addEventListener('DOMContentLoaded', function() {
+   fillDogList()
+}, false);
 
 /*
 let items = document.querySelectorAll('.dog-list-item') 

@@ -1,12 +1,10 @@
-import {item} from './dog-item.js'
-
 function openJSON (json, callback) {
     let request = new XMLHttpRequest()
     request.open('GET', json, true)
     
     request.onload = () => {
         if (request.status >= 200 && request.status < 400) {
-            var data = JSON.parse(request.responseText)
+            let data = JSON.parse(request.responseText)
             if (callback) callback(data);
         } else {                
             console.log('Falha na requisição http: ', request.status, request.statusText)
@@ -33,11 +31,11 @@ function fillDogList() {
         list.innerHTML = ""
 
         data.forEach(element => {
-            item.setAttribute('data-dog-id', element.id)
-            item.querySelector('dog-name').innerHTML = element.name
-            item.querySelector('dog-temperament').innerHTML = element.temperament
-            item.querySelector('dog-photo').setAttribute('src', `images/${element.id}.jpg`)
-                                           .setAttribute('alt', `Foto de ${element.name}`)
+            var item = `<div class="dog-list-item" data-dog-id="${element.id}">
+                            <img src="images/${element.id}.jpg" alt="Foto do ${element.name}" class="dog-photo">
+                            <div class="dog-name">${element.name}</div>
+                            <div class="dog-temperament">${element.temperament}</div>
+                        </div>`            
 
             list.appendChild(item)
         });
