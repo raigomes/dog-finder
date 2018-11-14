@@ -55,7 +55,10 @@ function showDogDescription(id) {
         for (let key in dog) {
             let value;
 
-            if (typeof dog[key] === 'object') {
+            if (typeof dog[key] === 'string' || typeof dog[key] === 'number') {
+                value = dog[key];
+            }
+            else if (typeof dog[key] === 'object') {
                 for (childKey in dog[key]) {
                     value += `<div class="dog-information-subitem">
                                 <span class="dog-information-item--label">${childKey}: </span> ${dog[key][childKey]}
