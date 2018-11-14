@@ -53,7 +53,7 @@ function showDogDescription(id) {
                                 <div class="dog-information">`
 
         for (let key in dog) {
-            let value;
+            let value = "";
 
             if (typeof dog[key] === 'string' || typeof dog[key] === 'number') {
                 value = dog[key];
