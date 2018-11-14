@@ -62,8 +62,9 @@ function showDogDescription(id) {
                               </div>`;
                 }
             }
-            else (typeof dog[key] === 'string') 
+            else {
                 value = dog[key];
+            }
 
             description += `<div class="dog-information-item">
                                 <span class="dog-information-item--label">${key}: </span> ${value}
