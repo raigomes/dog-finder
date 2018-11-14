@@ -19,7 +19,7 @@ function openJSON (json, callback) {
 }
 
 function back() {
-    fillDogList();
+    fillDogList()
 }
 
 function fillDogList() {
@@ -78,7 +78,7 @@ function showDogDescription(id) {
                             </div>`
         }
         
-        description += "<a href='javascript:back()'>Voltar</a>"
+        description += "<a href='javascript:back();'>Voltar</a>"
         description += '</div>'
         document.querySelector(".dog-container").innerHTML = description
         document.querySelector(".dog-header").style.display = "none"
