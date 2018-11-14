@@ -46,17 +46,14 @@ function fillDogList() {
 function showDogDescription(id) {
     
     openJSON(`json/breed/${id}.json`, (dog) => {
-        var description = `<div class="dog-description">
+        let description = `<div class="dog-description">
                                 <img src="images/${id}.jpg" alt="Foto do ${dog.name}" class="dog-image">
                                 <div class="dog-name">${dog.name}</div>
                                 <div class="dog-information">`
 
-        for (var dogInformation in dog) {
-            var key = dogInformation.key
-            var value = dogInformation.value
-
+        for (let key in dog) {
             description += `<p class="dog-information-item">
-                                <span class="dog-information-item--label">${key}: </span> ${value}
+                                <span class="dog-information-item--label">${key}: </span> ${dog[key]}
                             </p>`
         }
         
