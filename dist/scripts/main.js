@@ -33,6 +33,7 @@ function fillDogList() {
 
         list += `</div>`
         document.querySelector(".dog-container").innerHTML = list
+        document.querySelector(".dog-header").style.display = "block"
 
         document.querySelectorAll('.dog-list-item').forEach(item => {
             item.addEventListener('click', (e) => {
@@ -59,6 +60,7 @@ function showDogDescription(id) {
         
         description += '</div>'
         document.querySelector(".dog-container").innerHTML = description
+        document.querySelector(".dog-header").style.display = "none"
     })
 }
 
