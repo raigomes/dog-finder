@@ -90,6 +90,9 @@ body {
 .dog-information-item--label {
   font-weight: 800;
 }
+.back {
+  margin: 10px;
+}
 .dog-footer {
   position: fixed;
   bottom: 0;

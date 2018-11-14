@@ -78,10 +78,11 @@ function showDogDescription(id) {
                             </div>`
         }
         
-        description += `<a href="javascript:void(0);" onclick="back();">Voltar</a>`
+        description += `<a href="#" class="back">Voltar</a>`
         description += '</div>'
         document.querySelector(".dog-container").innerHTML = description
         document.querySelector(".dog-header").style.display = "none"
+        document.querySelector(".back").addEventListener('click', back)
     })
 }
 
