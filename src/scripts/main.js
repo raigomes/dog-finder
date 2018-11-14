@@ -19,27 +19,20 @@ function openJSON (json, callback) {
 }
 
 function fillDogList() {
-    let list = document.querySelector(".dog-list")
     
-    if (list === null || list === undefined ) {
-        list = document.createElement("div")
-        list.setAttribute("class", "dog-list")
-    }
-
     openJSON('json/breeds.json', (data) => {
-        list.innerHTML = ""
+        let list = `<div class="dog-list">`
 
         data.forEach(element => {
-            var item = `<div class="dog-list-item" data-dog-id="${element.id}">
+            list += `<div class="dog-list-item" data-dog-id="${element.id}">
                             <img src="images/${element.id}.jpg" alt="Foto do ${element.name}" class="dog-photo">
                             <div class="dog-name">${element.name}</div>
                             <div class="dog-temperament">${element.temperament}</div>
-                        </div>`            
-
-            list.innerHTML += item
+                        </div>`    
         });
 
-        document.querySelector(".dog-container").appendChild(list)
+        list += `</div>`
+        document.querySelector(".dog-container").innerHTML = list
 
         document.querySelectorAll('.dog-list-item').forEach(item => {
             item.addEventListener('click', (e) => {
@@ -68,7 +61,7 @@ function showDogDescription(id) {
         }
         
         description += '</div>'
-        document.querySelector(".dog-container").appendChild(description)
+        document.querySelector(".dog-container").innerHTML = description
     })
 }
 
