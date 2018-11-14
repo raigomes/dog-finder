@@ -53,9 +53,22 @@ function showDogDescription(id) {
                                 <div class="dog-information">`
 
         for (let key in dog) {
-            description += `<p class="dog-information-item">
-                                <span class="dog-information-item--label">${key}: </span> ${dog[key]}
-                            </p>`
+            let value;
+
+            if (typeof dog[key] === 'object') {
+                for (childKey in dog[key]) {
+                    value += `<div class="dog-information-subitem">
+                                <span class="dog-information-item--label">${childKey}: </span> ${dog[key][childKey]}
+                              </div>`;
+                }
+            }
+            else {
+                value = dog[key];
+            }
+
+            description += `<div class="dog-information-item">
+                                <span class="dog-information-item--label">${key}: </span> ${value}
+                            </div>`
         }
         
         description += '</div>'
