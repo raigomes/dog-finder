@@ -42,8 +42,8 @@ function fillDogList() {
         document.querySelector(".dog-container").appendChild(list)
 
         document.querySelectorAll('.dog-list-item').forEach(item => {
-            item.addEventListener('click', (event) => {
-                let id = this.getAttribute('data-dog-id')
+            item.addEventListener('click', (e) => {
+                let id = e.target.getAttribute('data-dog-id')
                 showDogDescription(id)
             })
         });
