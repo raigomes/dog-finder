@@ -6,7 +6,7 @@ body {
   width: 100vw;
 }
 .dog-container {
-  margin: 0 auto;
+  margin: 0 auto 40px;
 }
 .dog-header {
   background-color: #f1f1f2;
@@ -90,6 +90,9 @@ body {
 .dog-footer {
   position: fixed;
   bottom: 0;
+  left: 0;
+  right: 0;
+  top: auto;
   background-color: #000;
   color: #fff;
   width: 100%;
